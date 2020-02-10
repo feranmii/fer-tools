@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Fertools.556955231.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scenes" t="Include">
+          <e p="Assets" t="Include">
+            <e p="TimeManager.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Fertools" t="Include">
+            <e p="Color" t="Include">
+              <e p="FColor.cs" t="Include" />
+            </e>
+            <e p="Events" t="Include">
+              <e p="Event.cs" t="Include" />
+            </e>
+            <e p="Health" t="Include">
+              <e p="HealthVariable.cs" t="Include" />
+            </e>
+            <e p="Singleton" t="Include">
+              <e p="PersistentSingleton.cs" t="Include" />
+              <e p="Singleton.cs" t="Include" />
+            </e>
+            <e p="StateMachine" t="Include">
+              <e p="FStateMachine.cs" t="Include" />
+              <e p="TestAbility.cs" t="Include" />
+              <e p="TestMovement.cs" t="Include" />
+              <e p="TestStates.cs" t="Include" />
+            </e>
+            <e p="Time" t="Include">
+              <e p="FTimeConverter.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scriptable Library" t="Include">
+            <e p="Variables" t="Include">
+              <e p="BoolVariable.cs" t="Include" />
+              <e p="FloatVariable.cs" t="Include" />
+              <e p="IntVariable.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Fertools.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
