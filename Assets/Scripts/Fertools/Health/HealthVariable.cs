@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Health/Health Variable")]
 public class HealthVariable : ScriptableObject
 {
 
@@ -37,4 +38,10 @@ public class HealthVariable : ScriptableObject
     {
         _health = value;
     }
+
+    public void Reset()
+    {
+        _health = max;
+    }
+    
 }

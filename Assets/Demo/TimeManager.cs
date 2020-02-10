@@ -18,4 +18,15 @@ public class TimeManager : MonoBehaviour
             t = 0;
         }
     }
+
+    public void Slowmo()
+    {
+        
+    }
+
+    public void Pause()
+    {
+        
+    }
+    
 }
