@@ -2,67 +2,68 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Time/Timer Variable")]
-public class TimerVariable : ScriptableObject
-{
-    public enum TimerType
+    [CreateAssetMenu(menuName = "Time/Timer Variable")]
+    public class TimerVariable : ScriptableObject
     {
-        Elapsing,
-        Countdown
-    }
-
-    public TimerType timerType;
-
-    [Space(10)] public bool beginOnStart = true;
-    public int maxTime;
-    
-    private int timer;
-
-    public int Value => timer;
-
-    private float _t;
-    private bool _paused;
-
-    private bool _hasInit;
-    
-    public void Init()
-    {
-        timer = 0;
-        timer = timerType == TimerType.Countdown ? maxTime : 0;
-        _paused = !beginOnStart;
-        _hasInit = true;
-    }
-
-    public void Update()
-    {
-        
-        if(!_hasInit)
-            Debug.LogError("Init() has not been called.");
-        
-        if (!_paused)
+        public enum TimerType
         {
-            _t += Time.deltaTime;
+            Elapsing,
+            Countdown
+        }
 
-            if (_t >= 1)
+        public TimerType timerType;
+
+        [Space(10)] public bool beginOnStart = true;
+        public int maxTime;
+
+        private int timer;
+
+        public int Value => timer;
+
+        private float _t;
+        private bool _paused;
+
+        private bool _hasInit;
+
+        public void Init()
+        {
+            timer = 0;
+            timer = timerType == TimerType.Countdown ? maxTime : 0;
+            _paused = !beginOnStart;
+            _hasInit = true;
+        }
+
+        public void Update()
+        {
+
+            if (!_hasInit)
+                Debug.LogError("Init() has not been called.");
+
+            if (!_paused)
             {
-                _t = 0;
+                _t += Time.deltaTime;
 
-                timer += timerType == TimerType.Countdown ? -1 : 1;
-                
-                if (timerType == TimerType.Countdown && timer <= 0 || timerType == TimerType.Elapsing && timer >= maxTime)
+                if (_t >= 1)
                 {
-                    ToggleTimer();
+                    _t = 0;
+
+                    timer += timerType == TimerType.Countdown ? -1 : 1;
+
+                    if (timerType == TimerType.Countdown && timer <= 0 ||
+                        timerType == TimerType.Elapsing && timer >= maxTime)
+                    {
+                        ToggleTimer();
+                    }
+
                 }
-               
             }
         }
+
+
+        public void ToggleTimer()
+        {
+            _paused = !_paused;
+        }
+
+
     }
-
-
-public void ToggleTimer()
-    {
-        _paused = !_paused;
-    }
-
-
-}

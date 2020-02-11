@@ -21,6 +21,13 @@
             <e p="Health" t="Include">
               <e p="HealthVariable.cs" t="Include" />
             </e>
+            <e p="Pooling" t="Include">
+              <e p="Pool.cs" t="Include" />
+              <e p="PooledMonobehaviour.cs" t="Include" />
+              <e p="PoolPrepare.cs" t="Include" />
+              <e p="SecondPoolObject.cs" t="Include" />
+              <e p="TestPoolObject.cs" t="Include" />
+            </e>
             <e p="Singleton" t="Include">
               <e p="PersistentSingleton.cs" t="Include" />
               <e p="Singleton.cs" t="Include" />
@@ -43,6 +50,7 @@
               <e p="StringVariable.cs" t="Include" />
             </e>
           </e>
+          <e p="Test.cs" t="Include" />
         </e>
       </e>
       <e p="Fertools.sln" t="IncludeFlat" />
