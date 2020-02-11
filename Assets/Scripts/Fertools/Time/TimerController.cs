@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Time/Timer Variable")]
-    public class TimerVariable : ScriptableObject
+    [CreateAssetMenu(menuName = "Time/Timer Controller")]
+    public class TimerController : ScriptableObject
     {
         public enum TimerType
         {
@@ -20,9 +21,13 @@ using UnityEngine;
 
         public int Value => timer;
 
+        public delegate void TimeDelegate();
+
+        public TimeDelegate onTimerEndEvent;
+        public TimeDelegate onTimerStartEvent;
+        
         private float _t;
         private bool _paused;
-
         private bool _hasInit;
 
         public void Init()
@@ -31,10 +36,18 @@ using UnityEngine;
             timer = timerType == TimerType.Countdown ? maxTime : 0;
             _paused = !beginOnStart;
             _hasInit = true;
+            
+            
         }
 
         public void Update()
         {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                Reset();
+            }
+            
+            //TODO: Solve Init Issues
 
             if (!_hasInit)
                 Debug.LogError("Init() has not been called.");
@@ -53,6 +66,7 @@ using UnityEngine;
                         timerType == TimerType.Elapsing && timer >= maxTime)
                     {
                         ToggleTimer();
+                        OnTimerEnd();
                     }
 
                 }
@@ -60,10 +74,25 @@ using UnityEngine;
         }
 
 
+        public void Reset()
+        {
+            
+            Init();
+        }
+
         public void ToggleTimer()
         {
             _paused = !_paused;
         }
 
 
+        private void OnTimerEnd()
+        {
+            onTimerEndEvent?.Invoke();
+        }
+
+        private void OnTimerStart()
+        {
+            
+        }
     }

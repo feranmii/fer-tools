@@ -11,7 +11,7 @@ namespace Fertools.Time
     public class FGameTimer : MonoBehaviour
     {
 
-        public TimerVariable timer;
+        public TimerController timer;
 
         [Header("Time Output"), Space(10)] public StringVariable outputTimeString;
 
@@ -23,6 +23,7 @@ namespace Fertools.Time
         private void Start()
         {
             timer.Init();
+            timer.onTimerEndEvent += () => { print("Teaaah"); };
             UpdateOutput();
         }
 
