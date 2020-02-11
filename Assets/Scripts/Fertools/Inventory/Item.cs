@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : ScriptableObject
+namespace Fertools.Inventory
 {
-    public string id;
+
+    public enum ItemType
+    {
+        OneTimeUse,
+        Reusable
+    }
     
-    public void Use(){}
-    
-    public void Drop(){}
-    
-    
+
+    public abstract class Item : ScriptableObject
+    {
+        public ItemType itemType;
+        public abstract void Use();
+
+        public void Drop()
+        {
+            
+        }
+
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fertools.Inventory;
 using Fertools.Pooling;
 using UnityEngine;
 
@@ -8,7 +9,15 @@ public class Test : MonoBehaviour
 {
     public TestPoolObject prefab;
     public SecondPoolObject prefabz;
-    
+
+
+    public WeaponItem currentWeapon;
+
+    private void Start()
+    {
+        currentWeapon = (WeaponItem) Inventory.Instance.GetItem("AK") ;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -22,7 +31,9 @@ public class Test : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            prefabz.Get<SecondPoolObject>();
+            //prefabz.Get<SecondPoolObject>();
+            if(currentWeapon != null)
+                currentWeapon.Use();
         }
         
     }

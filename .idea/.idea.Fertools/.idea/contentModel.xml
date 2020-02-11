@@ -22,7 +22,11 @@
               <e p="HealthVariable.cs" t="Include" />
             </e>
             <e p="Inventory" t="Include">
+              <e p="Inventory.cs" t="Include" />
+              <e p="InventoryDataContainer.cs" t="Include" />
               <e p="Item.cs" t="Include" />
+              <e p="KeyItem.cs" t="Include" />
+              <e p="WeaponItem.cs" t="Include" />
             </e>
             <e p="Pooling" t="Include">
               <e p="Pool.cs" t="Include" />
@@ -45,6 +49,9 @@
               <e p="FGameTimer.cs" t="Include" />
               <e p="FTimeConverter.cs" t="Include" />
               <e p="TimerController.cs" t="Include" />
+            </e>
+            <e p="Utils" t="Include">
+              <e p="FindAssetsByType.cs" t="Include" />
             </e>
             <e p="Variables" t="Include">
               <e p="BoolVariable.cs" t="Include" />
