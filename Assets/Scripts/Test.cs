@@ -36,5 +36,11 @@ public class Test : MonoBehaviour
                 currentWeapon.Use();
         }
         
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            OnXPGained gained = new OnXPGained(150);
+            gained.FireEvent();
+        }
+        
     }
 }

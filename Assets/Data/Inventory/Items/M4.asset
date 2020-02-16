@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88839f42016f44dde8061ea8c6423159, type: 3}
   m_Name: M4
   m_EditorClassIdentifier: 
+  isUnlocked: 0
+  cost: 400
   itemType: 1
   magazineSize: 2
   bulletCount: 3

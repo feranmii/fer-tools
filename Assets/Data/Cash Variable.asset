@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29f83153ab534351977a4f862d1f6b3, type: 3}
-  m_Name: Inventory Data Container
+  m_Script: {fileID: 11500000, guid: 9defd1170f2db463bb947a91a14c0240, type: 3}
+  m_Name: Cash Variable
   m_EditorClassIdentifier: 
-  inventoryItems:
-  - {fileID: 11400000, guid: a65d66f9ee0434aa4acaafc732535a54, type: 2}
-  - {fileID: 11400000, guid: c30e32424daee430ca7d171399a43f23, type: 2}
+  cash: 500

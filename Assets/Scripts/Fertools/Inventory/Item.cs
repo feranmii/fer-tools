@@ -7,14 +7,28 @@ namespace Fertools.Inventory
 
     public enum ItemType
     {
-        OneTimeUse,
-        Reusable
+        Gun,
+        Throwable
     }
     
 
     public abstract class Item : ScriptableObject
     {
+        public bool isUnlocked;
+        public int cost;
+        
         public ItemType itemType;
+
+        public void UnlockItem()
+        {
+            isUnlocked = true;
+        }
+
+        public void LockItem()
+        {
+            
+        }
+        
         public abstract void Use();
 
         public void Drop()

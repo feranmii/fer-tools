@@ -13,7 +13,7 @@ namespace Fertools.Inventory
 
         //public List<KeyValuePair<string, Item>> items => items_dict.ToList();
 
-        public InventoryDataContainer dataContainer;
+        public ItemsDataContainer dataContainer;
 
         public List<Item> carryingItems = new List<Item>();
         
@@ -24,7 +24,7 @@ namespace Fertools.Inventory
         
         private void Initialize()
         {
-            foreach (var item in dataContainer.inventoryItems)
+            foreach (var item in dataContainer.items)
             {
                 AddItemToDict(item);
             }
@@ -45,12 +45,14 @@ namespace Fertools.Inventory
         
         public Item GetCarryingItem(string id)
         {
-            var it = GetItem(id);
+            Item retVal = null;
 
-            if (carryingItems.Contains(it))
+            if (carryingItems.Contains(GetItem(id)))
             {
-                print("yeahg");
+                retVal = GetItem(id);
             }
+
+            return retVal;
         }
         public Item GetItem(string id)
         {

@@ -7,13 +7,13 @@ using UnityEngine;
 namespace Fertools.Inventory
 {
     [CreateAssetMenu(menuName = "Inventory/Data Container")]
-    public class InventoryDataContainer : ScriptableObject
+    public class ItemsDataContainer : ScriptableObject
     {
-        public List<Item> inventoryItems;
+        public List<Item> items;
 
         private void OnValidate()
         {
-            inventoryItems = FindAssetsByType.FindAssetsOfType<Item>();
+            items = FindAssetsByType.FindAssetsOfType<Item>();
         }
     }
 }

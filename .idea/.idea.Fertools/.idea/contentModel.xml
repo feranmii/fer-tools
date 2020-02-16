@@ -12,6 +12,10 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Fertools" t="Include">
+            <e p="Battle System" t="Include">
+              <e p="Battle.cs" t="Include" />
+              <e p="BattleSystem.cs" t="Include" />
+            </e>
             <e p="Color" t="Include">
               <e p="FColor.cs" t="Include" />
             </e>
@@ -23,10 +27,16 @@
             </e>
             <e p="Inventory" t="Include">
               <e p="Inventory.cs" t="Include" />
-              <e p="InventoryDataContainer.cs" t="Include" />
               <e p="Item.cs" t="Include" />
+              <e p="ItemsDataContainer.cs" t="Include" />
               <e p="KeyItem.cs" t="Include" />
               <e p="WeaponItem.cs" t="Include" />
+            </e>
+            <e p="Levelling System" t="Include">
+              <e p="LevelUpSystem.cs" t="Include" />
+            </e>
+            <e p="LocalStorage" t="Include">
+              <e p="LocalStorage.cs" t="Include" />
             </e>
             <e p="Pooling" t="Include">
               <e p="Pool.cs" t="Include" />
@@ -45,6 +55,10 @@
               <e p="TestMovement.cs" t="Include" />
               <e p="TestStates.cs" t="Include" />
             </e>
+            <e p="Store" t="Include">
+              <e p="CashVariable.cs" t="Include" />
+              <e p="Store.cs" t="Include" />
+            </e>
             <e p="Time" t="Include">
               <e p="FGameTimer.cs" t="Include" />
               <e p="FTimeConverter.cs" t="Include" />
@@ -52,6 +66,8 @@
             </e>
             <e p="Utils" t="Include">
               <e p="FindAssetsByType.cs" t="Include" />
+              <e p="PlayerPrefsExtensions.cs" t="Include" />
+              <e p="StaticStrings.cs" t="Include" />
             </e>
             <e p="Variables" t="Include">
               <e p="BoolVariable.cs" t="Include" />
