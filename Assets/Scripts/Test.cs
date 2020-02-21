@@ -41,6 +41,14 @@ public class Test : MonoBehaviour
             OnXPGained gained = new OnXPGained(150);
             gained.FireEvent();
         }
+      
+        
+          
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            TestEnemyDeathEvent ted = new TestEnemyDeathEvent();
+            ted.FireEvent();
+        }
         
     }
 }

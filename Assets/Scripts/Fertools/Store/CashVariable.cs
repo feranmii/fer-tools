@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EventCallbacks;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -17,6 +18,9 @@ public class CashVariable : ScriptableObject
     {
         if (cash <= MAX_CASH)
             cash += value;
+        
+        OnCashAmountChanged cac = new OnCashAmountChanged(cash);
+        cac.FireEvent();
     }
 
     public void RemoveCash(int value)
@@ -25,6 +29,10 @@ public class CashVariable : ScriptableObject
 
         if (cash < 0)
             cash = 0;
+        
+        OnCashAmountChanged cac = new OnCashAmountChanged(cash);
+        cac.FireEvent();
+        
     }
 
     public bool AttemptPurchase(int cost)
@@ -59,5 +67,14 @@ public class CashVariable : ScriptableObject
         LocalStorage.Cash = cash;
     }
 }
+}
 
+public class OnCashAmountChanged : Event<OnCashAmountChanged>
+{
+    public int newCash;
+
+    public OnCashAmountChanged(int newCash)
+    {
+        this.newCash = newCash;
+    }
 }

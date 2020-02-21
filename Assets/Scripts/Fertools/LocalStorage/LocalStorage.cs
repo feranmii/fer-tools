@@ -21,6 +21,11 @@ public class LocalStorage : MonoBehaviour
         get => PlayerPrefs.GetInt(StaticStrings.USERCASH);
         set => PlayerPrefs.SetInt(StaticStrings.USERCASH, value);
     }
+    public static int Highscore 
+    {
+        get => PlayerPrefs.GetInt(StaticStrings.HIGHSCORE);
+        set => PlayerPrefs.SetInt(StaticStrings.HIGHSCORE, value);
+    }
     
     public static string UserName
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using EventCallbacks;
 using Fertools.Inventory;
 using UnityEngine;
 
@@ -48,6 +49,10 @@ namespace Fertools.Store
                 if (success)
                 {
                     itemToBuy.UnlockItem();
+                    
+                    var oip = new OnItemPurchased(itemToBuy);
+                    oip.FireEvent();
+                    
                     Init();
                 }
                 
@@ -86,5 +91,16 @@ namespace Fertools.Store
                 return retVal;
             }
         }
+    }
+}
+
+
+public class OnItemPurchased : Event<OnItemPurchased>
+{
+    public Item itemPurchased;
+
+    public OnItemPurchased(Item itemPurchased)
+    {
+        this.itemPurchased = itemPurchased;
     }
 }

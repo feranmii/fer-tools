@@ -8,11 +8,8 @@ public class HealthVariable : ScriptableObject
 
     private int _health = 100;
     
-    public int Value
-    {
-        get => _health;
-    }
-    
+    public int Value => _health;
+
     public int min = 0;
     public int max = 100;
 
