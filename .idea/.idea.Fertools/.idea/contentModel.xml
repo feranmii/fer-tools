@@ -13,6 +13,18 @@
         <e p="Scripts" t="Include">
           <e p="Fertools" t="Include">
             <e p="_ThirdParty" t="Include">
+              <e p="DOTween 2" t="Include">
+                <e p="Modules" t="Include">
+                  <e p="DOTweenModuleAudio.cs" t="Include" />
+                  <e p="DOTweenModulePhysics.cs" t="Include" />
+                  <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                  <e p="DOTweenModuleSprite.cs" t="Include" />
+                  <e p="DOTweenModuleUI.cs" t="Include" />
+                  <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                  <e p="DOTweenModuleUtils.cs" t="Include" />
+                </e>
+                <e p="readme.txt" t="Include" />
+              </e>
               <e p="NaughtyAttributes" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="Core" t="Include">
@@ -155,8 +167,17 @@
             <e p="Events" t="Include">
               <e p="Event.cs" t="Include" />
             </e>
+            <e p="Guns System" t="Include">
+              <e p="Bullet.cs" t="Include" />
+              <e p="Gun.cs" t="Include" />
+              <e p="GunData.cs" t="Include" />
+              <e p="GunShooting.cs" t="Include" />
+            </e>
             <e p="Health" t="Include">
               <e p="HealthVariable.cs" t="Include" />
+            </e>
+            <e p="Input System" t="Include">
+              <e p="InputManager.cs" t="Include" />
             </e>
             <e p="Inventory" t="Include">
               <e p="Inventory.cs" t="Include" />
@@ -203,6 +224,7 @@
               <e p="TimerController.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">
+              <e p="Fader.cs" t="Include" />
               <e p="FindAssetsByType.cs" t="Include" />
               <e p="PlayerPrefsExtensions.cs" t="Include" />
               <e p="StaticStrings.cs" t="Include" />

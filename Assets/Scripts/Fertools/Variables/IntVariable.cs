@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Variables/Integer")]
@@ -8,9 +9,7 @@ using UnityEngine;
 public class IntVariable : ScriptableObject
 {
    public bool isSerializable;
-   
    public int value;
-
 
    private void OnEnable()
    {
