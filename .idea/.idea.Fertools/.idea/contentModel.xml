@@ -6,9 +6,10 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Demo" t="Include">
-          <e p="HealthManager.cs" t="Include" />
-          <e p="TimeManager.cs" t="Include" />
+        <e p="Demo Assets" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="ScreenTransitionImageEffect.shader" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Fertools" t="Include">
@@ -143,7 +144,7 @@
                 </e>
               </e>
             </e>
-            <e p="AchievementSystem" t="Include">
+            <e p="Achievement System" t="Include">
               <e p="Achievement UI" t="Include">
                 <e p="AchievementNotificationItem.cs" t="Include" />
               </e>
@@ -158,7 +159,7 @@
             <e p="Color" t="Include">
               <e p="FColor.cs" t="Include" />
             </e>
-            <e p="Dialogue" t="Include">
+            <e p="Dialogue System" t="Include">
               <e p="Dialogue.cs" t="Include" />
               <e p="DialogueActorsList.cs" t="Include" />
               <e p="DialogueTrigger.cs" t="Include" />
@@ -167,6 +168,21 @@
             <e p="Events" t="Include">
               <e p="Event.cs" t="Include" />
             </e>
+            <e p="Fading" t="Include">
+              <e p="AdvancedFade" t="Include">
+                <e p="AdvancedFade.cs" t="Include" />
+                <e p="ScreenTransitionImageEffect.cs" t="Include" />
+              </e>
+              <e p="BasicFade" t="Include">
+                <e p="Fader.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Generic State Machine" t="Include">
+              <e p="FStateMachine.cs" t="Include" />
+              <e p="TestAbility.cs" t="Include" />
+              <e p="TestMovement.cs" t="Include" />
+              <e p="TestStates.cs" t="Include" />
+            </e>
             <e p="Guns System" t="Include">
               <e p="Bullet.cs" t="Include" />
               <e p="Gun.cs" t="Include" />
@@ -174,10 +190,8 @@
               <e p="GunShooting.cs" t="Include" />
             </e>
             <e p="Health" t="Include">
+              <e p="HealthManager.cs" t="Include" />
               <e p="HealthVariable.cs" t="Include" />
-            </e>
-            <e p="Input System" t="Include">
-              <e p="InputManager.cs" t="Include" />
             </e>
             <e p="Inventory" t="Include">
               <e p="Inventory.cs" t="Include" />
@@ -208,12 +222,6 @@
               <e p="PersistentSingleton.cs" t="Include" />
               <e p="Singleton.cs" t="Include" />
             </e>
-            <e p="StateMachine" t="Include">
-              <e p="FStateMachine.cs" t="Include" />
-              <e p="TestAbility.cs" t="Include" />
-              <e p="TestMovement.cs" t="Include" />
-              <e p="TestStates.cs" t="Include" />
-            </e>
             <e p="Store" t="Include">
               <e p="CashVariable.cs" t="Include" />
               <e p="Store.cs" t="Include" />
@@ -221,10 +229,10 @@
             <e p="Time" t="Include">
               <e p="FGameTimer.cs" t="Include" />
               <e p="FTimeConverter.cs" t="Include" />
+              <e p="TimeManager.cs" t="Include" />
               <e p="TimerController.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">
-              <e p="Fader.cs" t="Include" />
               <e p="FindAssetsByType.cs" t="Include" />
               <e p="PlayerPrefsExtensions.cs" t="Include" />
               <e p="StaticStrings.cs" t="Include" />

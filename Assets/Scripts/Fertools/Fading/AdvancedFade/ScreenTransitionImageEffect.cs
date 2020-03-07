@@ -1,24 +1,25 @@
-﻿// This code is related to an answer I provided in the Unity forums at:
-// http://forum.unity3d.com/threads/circular-fade-in-out-shader.344816/
-
+﻿using System;
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
+using EventCallbacks;
+using NaughtyAttributes;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
-[AddComponentMenu("Image Effects/Screen Transition")]
 public class ScreenTransitionImageEffect : MonoBehaviour
 {
     /// Provides a shader property that is set in the inspector
     /// and a material instantiated from the shader
+    /// 
     public Shader shader;
-
     [Range(0,1.0f)]
     public float maskValue;
     public Color maskColor = Color.black;
     public Texture2D maskTexture;
     public bool maskInvert;
 
+    public float duration = 1;
     private Material m_Material;
     private bool m_maskInvert;
 
@@ -35,8 +36,26 @@ public class ScreenTransitionImageEffect : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        OnScreenTransition.RegisterListener(DoScreenTransition);
+    }
+    
+    void OnDisable()
+    {
+        OnScreenTransition.UnregisterListener(DoScreenTransition);
+
+        if (m_Material)
+        {
+            DestroyImmediate(m_Material);
+        }
+    }
+
+    
+
     void Start()
     {
+        maskValue = 0;
         // Disable if we don't support image effects
         if (!SystemInfo.supportsImageEffects)
         {
@@ -52,13 +71,27 @@ public class ScreenTransitionImageEffect : MonoBehaviour
             enabled = false;
     }
 
-    void OnDisable()
+    [Button()]
+    public void TestTransition()
     {
-        if (m_Material)
-        {
-            DestroyImmediate(m_Material);
-        }
+        OnScreenTransition screenTransition = new OnScreenTransition(maskValue, 0, duration );
+        screenTransition.FireEvent();
     }
+
+    private void DoScreenTransition(OnScreenTransition screenTransition)
+    {
+        var target = maskValue >= 1 ? 0 : 1;
+        ScreenTransition(screenTransition.startingValue, target, screenTransition.duration);
+    }
+
+    protected virtual void ScreenTransition(float startingValue, float target, float duration = 1)
+    {
+        maskValue = startingValue;
+
+        DOTween.To(() => maskValue, x => maskValue = x, target, duration);
+    }
+
+    
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
@@ -82,5 +115,22 @@ public class ScreenTransitionImageEffect : MonoBehaviour
         }
 
         Graphics.Blit(source, destination, material);
+    }
+    
+    
+}
+
+public class OnScreenTransition : Event<OnScreenTransition>
+
+{
+    public float startingValue;
+    public float target;
+    public float duration;
+
+    public OnScreenTransition(float startingValue, float target, float duration)
+    {
+        this.startingValue = startingValue;
+        this.target = target;
+        this.duration = duration;
     }
 }

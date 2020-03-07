@@ -7,7 +7,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Fertools.Utils
+namespace Fertools.UI.Fade
 {
     [RequireComponent(typeof(CanvasGroup))]
     [RequireComponent(typeof(Image))]
@@ -137,8 +137,6 @@ namespace Fertools.Utils
 public class OnFade : Event<OnFade>
 {
     public float duration;
-
-
 
     public OnFade(float duration)
     {
