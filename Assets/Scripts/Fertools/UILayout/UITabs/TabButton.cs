@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -10,23 +11,33 @@ using UnityEngine.UI;
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
     public TabGroup tabGroup;
+    [Space]
+    public TabColors buttonColors;
+    public TabColors textColors;
 
-    public Image background;
     
+    [Space]
+    [Header("References")]
+    public Image background;
+    public TextMeshProUGUI buttonText;
+    
+   
     [Space]
     public UnityEvent onTabSelected;
     public UnityEvent onTabDeselected;
     
     
-    private void Start()
+    private void Awake()
     {
         background = GetComponent<Image>();
+        buttonText = GetComponentInChildren<TextMeshProUGUI>();
         tabGroup.Subscribe(this);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         tabGroup.OnTabEnter(this);
+        
     }
 
     public void OnPointerClick(PointerEventData eventData)

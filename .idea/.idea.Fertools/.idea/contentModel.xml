@@ -256,6 +256,10 @@
               <e p="TimeManager.cs" t="Include" />
               <e p="TimerController.cs" t="Include" />
             </e>
+            <e p="UIGrids" t="Include">
+              <e p="FlexibleGridLayout.cs" t="Include" />
+              <e p="PanelGroup.cs" t="Include" />
+            </e>
             <e p="UITabs" t="Include">
               <e p="TabButton.cs" t="Include" />
               <e p="TabGroup.cs" t="Include" />
@@ -265,6 +269,7 @@
               <e p="PlayerPrefsExtensions.cs" t="Include" />
               <e p="RandomExtensions.cs" t="Include" />
               <e p="StaticStrings.cs" t="Include" />
+              <e p="UIGetName.cs" t="Include" />
               <e p="Utils.cs" t="Include" />
             </e>
             <e p="Variables" t="Include">
