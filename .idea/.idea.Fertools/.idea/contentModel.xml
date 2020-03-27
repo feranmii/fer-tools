@@ -6,12 +6,21 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Demo Assets" t="Include">
+        <e p="Assets" t="Include">
           <e p="Shaders" t="Include">
             <e p="ScreenTransitionImageEffect.shader" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="FerGameplay" t="Include">
+            <e p="InputUpdater.cs" t="Include" />
+            <e p="IVelocity.cs" t="Include" />
+            <e p="MoveVelocity.cs" t="Include" />
+            <e p="PhysicsMovement.cs" t="Include" />
+            <e p="PlayerInput.cs" t="Include" />
+            <e p="PlayerRotation.cs" t="Include" />
+            <e p="PlayerStats.cs" t="Include" />
+          </e>
           <e p="Fertools" t="Include">
             <e p="_ThirdParty" t="Include">
               <e p="DOTween 2" t="Include">
@@ -63,7 +72,6 @@
                       <e p="ShowIfAttribute.cs" t="Include" />
                       <e p="ShowIfAttributeBase.cs" t="Include" />
                     </e>
-                    <e p="NaughtyAttributes.Core.asmdef" t="Include" />
                     <e p="Utility" t="Include">
                       <e p="EColor.cs" t="Include" />
                       <e p="EConditionOperator.cs" t="Include" />
@@ -81,7 +89,6 @@
                       <e p="HorizontalLineDecoratorDrawer.cs" t="Include" />
                       <e p="InfoBoxDecoratorDrawer.cs" t="Include" />
                     </e>
-                    <e p="NaughtyAttributes.Editor.asmdef" t="Include" />
                     <e p="NaughtyInspector.cs" t="Include" />
                     <e p="PropertyDrawers" t="Include">
                       <e p="AllowNestingPropertyDrawer.cs" t="Include" />
@@ -127,7 +134,6 @@
                     <e p="LabelTest.cs" t="Include" />
                     <e p="MinMaxSliderTest.cs" t="Include" />
                     <e p="MinMaxValueTest.cs" t="Include" />
-                    <e p="NaughtyAttributes.Test.asmdef" t="Include" />
                     <e p="OnValueChangedTest.cs" t="Include" />
                     <e p="ProgressBarTest.cs" t="Include" />
                     <e p="ReadOnlyTest.cs" t="Include" />
@@ -156,6 +162,10 @@
               <e p="Battle.cs" t="Include" />
               <e p="BattleSystem.cs" t="Include" />
             </e>
+            <e p="CollectibleSystem" t="Include">
+              <e p="Collectible.cs" t="Include" />
+              <e p="ScoreCollectible.cs" t="Include" />
+            </e>
             <e p="Color" t="Include">
               <e p="FColor.cs" t="Include" />
             </e>
@@ -176,6 +186,7 @@
               <e p="BasicFade" t="Include">
                 <e p="Fader.cs" t="Include" />
               </e>
+              <e p="FadeController.cs" t="Include" />
             </e>
             <e p="Generic State Machine" t="Include">
               <e p="FStateMachine.cs" t="Include" />
@@ -200,11 +211,24 @@
               <e p="KeyItem.cs" t="Include" />
               <e p="WeaponItem.cs" t="Include" />
             </e>
+            <e p="LevelController" t="Include">
+              <e p="LevelController.cs" t="Include" />
+            </e>
             <e p="Levelling System" t="Include">
               <e p="LevelUpSystem.cs" t="Include" />
             </e>
+            <e p="LevelLoading" t="Include">
+              <e p="LoadingScene.cs" t="Include" />
+            </e>
             <e p="LocalStorage" t="Include">
               <e p="LocalStorage.cs" t="Include" />
+            </e>
+            <e p="Menu System" t="Include">
+              <e p="MainMenu.cs" t="Include" />
+              <e p="Menu.cs" t="Include" />
+            </e>
+            <e p="NavigationController" t="Include">
+              <e p="NavigationController.cs" t="Include" />
             </e>
             <e p="Pooling" t="Include">
               <e p="Pool.cs" t="Include" />
@@ -213,8 +237,8 @@
               <e p="SecondPoolObject.cs" t="Include" />
               <e p="TestPoolObject.cs" t="Include" />
             </e>
-            <e p="Score" t="Include">
-              <e p="ScoreRules.cs" t="Include" />
+            <e p="ScoreSystem" t="Include">
+              <e p="ScoreManager.cs" t="Include" />
               <e p="ScoreTable.cs" t="Include" />
               <e p="ScoreVariable.cs" t="Include" />
             </e>
@@ -232,10 +256,16 @@
               <e p="TimeManager.cs" t="Include" />
               <e p="TimerController.cs" t="Include" />
             </e>
+            <e p="UITabs" t="Include">
+              <e p="TabButton.cs" t="Include" />
+              <e p="TabGroup.cs" t="Include" />
+            </e>
             <e p="Utils" t="Include">
               <e p="FindAssetsByType.cs" t="Include" />
               <e p="PlayerPrefsExtensions.cs" t="Include" />
+              <e p="RandomExtensions.cs" t="Include" />
               <e p="StaticStrings.cs" t="Include" />
+              <e p="Utils.cs" t="Include" />
             </e>
             <e p="Variables" t="Include">
               <e p="BoolVariable.cs" t="Include" />
@@ -272,6 +302,7 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+            <e p="EmojiOne_License.txt" t="Include" />
           </e>
         </e>
       </e>
