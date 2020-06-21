@@ -17,7 +17,10 @@ public class UIGetName : MonoBehaviour
         var textObject = GetComponent<TextMeshProUGUI>();
 
         if (textObject != null)
+        {
             textObject.text = transform.parent.name;
+            textObject.gameObject.name = $"{transform.parent.name} - Text";
+        }
         
     }
 }

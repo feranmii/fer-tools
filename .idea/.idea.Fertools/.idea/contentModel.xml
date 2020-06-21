@@ -186,7 +186,6 @@
               <e p="BasicFade" t="Include">
                 <e p="Fader.cs" t="Include" />
               </e>
-              <e p="FadeController.cs" t="Include" />
             </e>
             <e p="Generic State Machine" t="Include">
               <e p="FStateMachine.cs" t="Include" />
@@ -256,13 +255,15 @@
               <e p="TimeManager.cs" t="Include" />
               <e p="TimerController.cs" t="Include" />
             </e>
-            <e p="UIGrids" t="Include">
-              <e p="FlexibleGridLayout.cs" t="Include" />
-              <e p="PanelGroup.cs" t="Include" />
-            </e>
-            <e p="UITabs" t="Include">
-              <e p="TabButton.cs" t="Include" />
-              <e p="TabGroup.cs" t="Include" />
+            <e p="UILayout" t="Include">
+              <e p="UIGrids" t="Include">
+                <e p="FlexibleGridLayout.cs" t="Include" />
+                <e p="PanelGroup.cs" t="Include" />
+              </e>
+              <e p="UITabs" t="Include">
+                <e p="TabButton.cs" t="Include" />
+                <e p="TabGroup.cs" t="Include" />
+              </e>
             </e>
             <e p="Utils" t="Include">
               <e p="FindAssetsByType.cs" t="Include" />
