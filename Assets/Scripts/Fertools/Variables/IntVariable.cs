@@ -6,14 +6,14 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Variables/Integer")]
 
-public class IntVariable : ScriptableObject
+public class IntVariable : BaseVariable<int>
 {
-   public bool isSerializable;
-   public int value;
-
-   private void OnEnable()
-   {
-      if(!isSerializable)
-         value = 0;
-   }
+   // public bool isSerializable;
+   // public int value;
+   //
+   // private void OnEnable()
+   // {
+   //    if(!isSerializable)
+   //       value = 0;
+   // }
 }

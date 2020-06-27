@@ -4,14 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Variables/Float")]
-public class FloatVariable : ScriptableObject
+public class FloatVariable : BaseVariable<float>
 {
-    public bool isSerialiazable = false;
-    public float value;
-
-    private void OnEnable()
-    {
-        if(!isSerialiazable)
-            value = 0;
-    }
+    
 }

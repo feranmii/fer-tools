@@ -23,49 +23,49 @@ namespace Fertools.Weapons.Guns
 
         public void Init()
         {
-            gunData.currentAmmo.value = gunData.magazineBullet;
-            gunData.carryingAmmo.value = gunData.ammo;
+            gunData.currentAmmo.Value = gunData.magazineBullet;
+            gunData.carryingAmmo.Value = gunData.ammo;
         }
 
         public override void Use()
         {
             if (gunData.limitedBullets) 
             {
-                if(gunData.currentAmmo.value > 0)
+                if(gunData.currentAmmo.Value > 0)
                 {
                     RemoveBullets(1); //TODO: Change this to depend on the bulletcost
                 }
                 else
                 {
-                    if (gunData.carryingAmmo.value > gunData.magazineBullet)
+                    if (gunData.carryingAmmo.Value > gunData.magazineBullet)
                     {
-                        var diff = gunData.magazineBullet - gunData.currentAmmo.value;
+                        var diff = gunData.magazineBullet - gunData.currentAmmo.Value;
                         Reload(gunData.magazineBullet);
                     }
                     else
                     {
-                        if(gunData.carryingAmmo.value > 0)
-                            Reload(gunData.carryingAmmo.value);
+                        if(gunData.carryingAmmo.Value > 0)
+                            Reload(gunData.carryingAmmo.Value);
                     }
                 }
             }
         }
 
-        public void RemoveBullets(int value)
+        public void RemoveBullets(int Value)
         {
-            gunData.currentAmmo.value -= value;
+            gunData.currentAmmo.Value -= Value;
         }
 
-        public void AddBullets(int value)
+        public void AddBullets(int Value)
         {
-            gunData.currentAmmo.value += value;
+            gunData.currentAmmo.Value += Value;
 
         }
 
         public void Reload(int bulletsToReload)
         {
-            gunData.currentAmmo.value += bulletsToReload;
-            gunData.carryingAmmo.value -= bulletsToReload;
+            gunData.currentAmmo.Value += bulletsToReload;
+            gunData.carryingAmmo.Value -= bulletsToReload;
         }
     }
   

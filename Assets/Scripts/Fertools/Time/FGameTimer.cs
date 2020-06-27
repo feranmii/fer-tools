@@ -44,7 +44,7 @@ namespace Fertools.Time
                 return;
 
             if (outputTimeString != null)
-                outputTimeString.value =
+                outputTimeString.Value =
                     FTimeConverter.FloatToTime(timer.Value, displayHours, displayMinutes, displaySeconds);
 
 

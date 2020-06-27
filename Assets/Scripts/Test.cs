@@ -13,9 +13,12 @@ public class Test : MonoBehaviour
 
     public WeaponItem currentWeapon;
 
+    public FloatVariable floatV;
+    public IntVariable intVa;
+    
     private void Start()
     {
-        currentWeapon = (WeaponItem) Inventory.Instance.GetItem("AK") ;
+        //currentWeapon = (WeaponItem) Inventory.Instance.GetItem("AK");
     }
 
     public void Update()
@@ -23,12 +26,16 @@ public class Test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Pool.Get<TestPoolObject>();
-            prefab.Get<TestPoolObject>(true);
+          //  prefab.Get<TestPoolObject>(true);
             /*PooledMonobehaviour obj = pool.Get<TestPoolObject>() ;
             obj.gameObject.SetActive(true);*/
 
+            floatV.Value++;
+            intVa.Value++;
+
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.A))
         {
             //prefabz.Get<SecondPoolObject>();
@@ -49,6 +56,7 @@ public class Test : MonoBehaviour
             TestEnemyDeathEvent ted = new TestEnemyDeathEvent();
             ted.FireEvent();
         }
+        */
         
     }
 }
