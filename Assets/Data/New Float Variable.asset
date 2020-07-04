@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77cf1d191753845bbbbb0953338a8dd4, type: 3}
   m_Name: New Float Variable
   m_EditorClassIdentifier: 
-  resetOnStart: 0
-  _value: 20
+  resetOnStart: 1
+  _value: 19

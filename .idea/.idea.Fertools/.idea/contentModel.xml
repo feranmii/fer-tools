@@ -283,6 +283,25 @@
               <e p="TimerController.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
+              <e p="UI Blur" t="Include">
+                <e p="UIBlur.shader" t="Include" />
+              </e>
+              <e p="UI Blur Fullscreen [Third Party]" t="Include">
+                <e p="SuperBlur" t="Include">
+                  <e p="Core" t="Include">
+                    <e p="SuperBlurBase.cs" t="Include" />
+                  </e>
+                  <e p="Shader" t="Include">
+                    <e p="SuperBlurPostEffect.shader" t="Include" />
+                    <e p="SuperBlurUI.shader" t="Include" />
+                  </e>
+                  <e p="SuperBlur.cs" t="Include" />
+                  <e p="SuperBlurFast.cs" t="Include" />
+                </e>
+              </e>
+              <e p="UI Gradient" t="Include">
+                <e p="UIGradient.cs" t="Include" />
+              </e>
               <e p="UIGrids" t="Include">
                 <e p="FlexibleGridLayout.cs" t="Include" />
                 <e p="PanelGroup.cs" t="Include" />
