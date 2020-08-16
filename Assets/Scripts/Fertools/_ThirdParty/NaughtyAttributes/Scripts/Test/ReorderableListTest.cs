@@ -13,21 +13,10 @@ namespace NaughtyAttributes.Test
 
 		[ReorderableList]
 		public List<SomeStruct> structList;
-		
-		[ReorderableList]
-		public List<SomeClass> classList;
 	}
 
 	[System.Serializable]
 	public struct SomeStruct
-	{
-		public int Int;
-		public float Float;
-		public Vector3 Vector;
-	}
-	
-	[System.Serializable]
-	public class SomeClass
 	{
 		public int Int;
 		public float Float;

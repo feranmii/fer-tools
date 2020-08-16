@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b883146580e48449aaaab0db64431908, type: 3}
+  m_Name: Agent Stats
+  m_EditorClassIdentifier: 
+  AIType: 1
+  idleBehaviour: 1
+  sprintSpeed: 6
+  runSpeed: 5
+  alertSpeed: 4
+  idleSpeed: 3
+  canSprint: 1
+  distanceFromTargetToSprint: 25
+  fieldOfView: 130
+  maxDistToNoticeTarget: 20
+  distToLoseAwareness: 35
+  wanderRadius: {x: 5, y: 12.087756}
+  distanceToChooseNewWanderPoint: 1.34
+  stopDistanceToPatrolPoint: 1.71
+  waitAtPatrolNode: 0
+  waitTimeAtPatrolNode: 2.25
+  radiusToCallOfSearch: 5
+  minSkirmishDistFromTarget: 7
+  maxSkirmishDistFromTarget: 20
+  canCrossBehindTarget: 1
+  maxTimeToWaitAtEachSkirmishPoint: 3
+  timeBetweenSafetyChecks: 1
+  maxTimeInCover: 15
+  minTimeInCover: 7
+  minDistToTargetIfNotInCover: 12
+  dodgingClearHeight: 1
+  minPauseTime: 1
+  randomPauseTimeAdd: 2
+  minRoundsPerVolley: 1
+  maxRoundsPerVolley: 10
+  minimumDistToFireGun: 1
+  maximumDistToFireGun: 9999
+  rateOfFire: 2
+  burstFireRate: 12
+  shotsPerBurst: 3
+  bulletsUntilReload: 60
+  reloadTime: 2
+  inaccuracy: 1
+  maxFiringAngle: 10
+  maxSecondaryFireAngle: 40

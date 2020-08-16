@@ -25,6 +25,7 @@ public class TestAbility : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
+            
             _movement.ChangeState(CharacterStates.MovementStates.Walking);
             _conditions.ChangeState(CharacterStates.CharacterConditionns.Normal);
         }

@@ -18,7 +18,10 @@ public static class Utils
     
     
     //TODO: Create MouseToWorldPosition that'll work with perspective cameras
-    
-    
+
+    public static bool LayerMaskCompare(LayerMask mask, GameObject objectToCompare)
+    {
+        return (mask.value & 1 << objectToCompare.gameObject.layer) != 0;
+    }
     
 }

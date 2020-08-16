@@ -10,9 +10,9 @@ namespace NaughtyAttributes.Editor
 	[CustomPropertyDrawer(typeof(DropdownAttribute))]
 	public class DropdownPropertyDrawer : PropertyDrawerBase
 	{
-		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+		protected override float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label)
 		{
-			DropdownAttribute dropdownAttribute = (DropdownAttribute) attribute;
+			DropdownAttribute dropdownAttribute = (DropdownAttribute)attribute;
 			object values = GetValues(property, dropdownAttribute.ValuesName);
 			FieldInfo fieldInfo = ReflectionUtility.GetField(PropertyUtility.GetTargetObjectWithProperty(property), property.name);
 
@@ -27,7 +27,7 @@ namespace NaughtyAttributes.Editor
 		{
 			EditorGUI.BeginProperty(rect, label, property);
 
-			DropdownAttribute dropdownAttribute = (DropdownAttribute) attribute;
+			DropdownAttribute dropdownAttribute = (DropdownAttribute)attribute;
 			object target = PropertyUtility.GetTargetObjectWithProperty(property);
 
 			object valuesObject = GetValues(property, dropdownAttribute.ValuesName);
@@ -41,7 +41,7 @@ namespace NaughtyAttributes.Editor
 					object selectedValue = dropdownField.GetValue(target);
 
 					// Values and display options
-					IList valuesList = (IList) valuesObject;
+					IList valuesList = (IList)valuesObject;
 					object[] values = new object[valuesList.Count];
 					string[] displayOptions = new string[valuesList.Count];
 
@@ -49,7 +49,7 @@ namespace NaughtyAttributes.Editor
 					{
 						object value = valuesList[i];
 						values[i] = value;
-						displayOptions[i] = value.ToString();
+						displayOptions[i] = value == null ? "<null>" : value.ToString();
 					}
 
 					// Selected value index
@@ -72,7 +72,7 @@ namespace NaughtyAttributes.Editor
 					int selectedValueIndex = -1;
 					List<object> values = new List<object>();
 					List<string> displayOptions = new List<string>();
-					IDropdownList dropdown = (IDropdownList) valuesObject;
+					IDropdownList dropdown = (IDropdownList)valuesObject;
 
 					using (IEnumerator<KeyValuePair<string, object>> dropdownEnumerator = dropdown.GetEnumerator())
 					{
@@ -81,13 +81,25 @@ namespace NaughtyAttributes.Editor
 							index++;
 
 							KeyValuePair<string, object> current = dropdownEnumerator.Current;
-							if (current.Value.Equals(selectedValue))
+							if (current.Value?.Equals(selectedValue) == true)
 							{
 								selectedValueIndex = index;
 							}
 
 							values.Add(current.Value);
-							displayOptions.Add(current.Key);
+
+							if (current.Key == null)
+							{
+								displayOptions.Add("<null>");
+							}
+							else if (string.IsNullOrWhiteSpace(current.Key))
+							{
+								displayOptions.Add("<empty>");
+							}
+							else
+							{
+								displayOptions.Add(current.Key);
+							}
 						}
 					}
 
@@ -129,8 +141,8 @@ namespace NaughtyAttributes.Editor
 
 			MethodInfo methodValuesInfo = ReflectionUtility.GetMethod(target, valuesName);
 			if (methodValuesInfo != null &&
-			    methodValuesInfo.ReturnType != typeof(void) &&
-			    methodValuesInfo.GetParameters().Length == 0)
+				methodValuesInfo.ReturnType != typeof(void) &&
+				methodValuesInfo.GetParameters().Length == 0)
 			{
 				return methodValuesInfo.Invoke(target, null);
 			}
@@ -146,7 +158,7 @@ namespace NaughtyAttributes.Editor
 			}
 
 			if ((values is IList && dropdownField.FieldType == GetElementType(values)) ||
-			    (values is IDropdownList))
+				(values is IDropdownList))
 			{
 				return true;
 			}

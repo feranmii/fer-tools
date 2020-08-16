@@ -1,8 +1,11 @@
-using UnityEngine;
-using UnityEditor;
 using System;
-using System.Reflection;
+using System.Collections;
 using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.Experimental.SceneManagement;
+using UnityEditor.SceneManagement;
+using UnityEngine;
 
 namespace NaughtyAttributes.Editor
 {
@@ -82,6 +85,16 @@ namespace NaughtyAttributes.Editor
 			EditorGUILayout.EndVertical();
 		}
 
+		public static bool BeginFoldout_Layout(bool unfolded, string label = "")
+		{
+			return EditorGUILayout.BeginFoldoutHeaderGroup(unfolded, label);
+		}
+
+		public static void EndFoldout_Layout()
+		{
+			EditorGUILayout.EndFoldoutHeaderGroup();
+		}
+
 		/// <summary>
 		/// Creates a dropdown
 		/// </summary>
@@ -113,15 +126,62 @@ namespace NaughtyAttributes.Editor
 
 		public static void Button(UnityEngine.Object target, MethodInfo methodInfo)
 		{
-			if (methodInfo.GetParameters().Length == 0)
+			bool visible = ButtonUtility.IsVisible(target, methodInfo);
+			if (!visible)
+			{
+				return;
+			}
+
+			if (methodInfo.GetParameters().All(p => p.IsOptional))
 			{
 				ButtonAttribute buttonAttribute = (ButtonAttribute)methodInfo.GetCustomAttributes(typeof(ButtonAttribute), true)[0];
-				string buttonText = string.IsNullOrEmpty(buttonAttribute.Text) ? methodInfo.Name : buttonAttribute.Text;
+				string buttonText = string.IsNullOrEmpty(buttonAttribute.Text) ? ObjectNames.NicifyVariableName(methodInfo.Name) : buttonAttribute.Text;
+
+				bool buttonEnabled = ButtonUtility.IsEnabled(target, methodInfo);
+
+				EButtonEnableMode mode = buttonAttribute.SelectedEnableMode;
+				buttonEnabled &=
+					mode == EButtonEnableMode.Always ||
+					mode == EButtonEnableMode.Editor && !Application.isPlaying ||
+					mode == EButtonEnableMode.Playmode && Application.isPlaying;
+
+				bool methodIsCoroutine = methodInfo.ReturnType == typeof(IEnumerator);
+				if (methodIsCoroutine)
+				{
+					buttonEnabled &= (Application.isPlaying ? true : false);
+				}
+
+				EditorGUI.BeginDisabledGroup(!buttonEnabled);
 
 				if (GUILayout.Button(buttonText))
 				{
-					methodInfo.Invoke(target, null);
+					object[] defaultParams = methodInfo.GetParameters().Select(p => p.DefaultValue).ToArray();
+					IEnumerator methodResult = methodInfo.Invoke(target, defaultParams) as IEnumerator;
+
+					if (!Application.isPlaying)
+					{
+						// Set target object and scene dirty to serialize changes to disk
+						EditorUtility.SetDirty(target);
+
+						PrefabStage stage = PrefabStageUtility.GetCurrentPrefabStage();
+						if (stage != null)
+						{
+							// Prefab mode
+							EditorSceneManager.MarkSceneDirty(stage.scene);
+						}
+						else
+						{
+							// Normal scene
+							EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+						}
+					}
+					else if (methodResult != null && target is MonoBehaviour behaviour)
+					{
+						behaviour.StartCoroutine(methodResult);
+					}
 				}
+
+				EditorGUI.EndDisabledGroup();
 			}
 			else
 			{
@@ -246,6 +306,10 @@ namespace NaughtyAttributes.Editor
 			else if (typeof(UnityEngine.Object).IsAssignableFrom(valueType))
 			{
 				EditorGUILayout.ObjectField(label, (UnityEngine.Object)value, valueType, true);
+			}
+			else if (valueType.BaseType == typeof(Enum))
+			{
+				EditorGUILayout.EnumPopup(label, (Enum)value);
 			}
 			else
 			{
