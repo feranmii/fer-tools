@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class LoadingScene : MonoBehaviour
 {
-    public static string LoadingScreenSceneName = "LoadingScene";
+    public static string LoadingScreenSceneName = "Loading Scene";
 
     public CanvasGroup loadingProgressBar;
     public TextMeshProUGUI loadingText;

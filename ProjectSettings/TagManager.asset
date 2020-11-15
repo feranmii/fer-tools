@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - HUD
+  - Back Button
   layers:
   - Default
   - TransparentFX

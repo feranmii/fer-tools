@@ -10,14 +10,20 @@ using UnityEngine.UI;
 
 public class UIScreenManager : MonoBehaviour
 {
-    [ReadOnly] public GameObject currentlyOpen;
+    [Foldout("Debug"), ReadOnly] public GameObject currentlyOpen;
     [ReorderableList] public List<GameObject> allScreens;
-    [Header("Screens Info")] [Space] public GameObject firstScreen;
+    public bool setFirstScreen;
+    [Header("Screens Info"), ShowIf("setFirstScreen")] [Space] public GameObject firstScreen;
 
     private Stack<GameObject> openedScreens;
 
     private void Start()
     {
+        if (!setFirstScreen && allScreens.Count > 0)
+        {
+            firstScreen = allScreens[0];
+        }
+      
         Init();
     }
 

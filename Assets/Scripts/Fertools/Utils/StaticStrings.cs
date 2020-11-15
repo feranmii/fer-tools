@@ -13,4 +13,11 @@ namespace Fertools.Utils
         
 
     }
+
+    public class SceneNames
+    {
+        public static readonly string GAME = "Game";
+        public static readonly string MENU = "Menu";
+
+    }
 }

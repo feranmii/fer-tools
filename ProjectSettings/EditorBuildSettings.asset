@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/UI Grid Test.unity
-    guid: 64f042257272c4b9ab9b988a1aaad420
+    path: Assets/Scenes/Full Gameplay Loop/Menu.unity
+    guid: 7767d5df56c7f0f43a3d4a40018231ea
+  - enabled: 1
+    path: Assets/Scenes/Full Gameplay Loop/Game.unity
+    guid: 35168ab1441d00e47a97b6a77f8abbf3
+  - enabled: 1
+    path: Assets/Scenes/Full Gameplay Loop/Loading Scene.unity
+    guid: 4bdb3b6bd8864554e9029296b3f0bcee
   m_configObjects: {}
