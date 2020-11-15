@@ -853,8 +853,9 @@ GameObject:
   - component: {fileID: 5070007083146346469}
   - component: {fileID: 5070007083146346467}
   - component: {fileID: 5070007083146346466}
+  - component: {fileID: 1302081620}
   m_Layer: 5
-  m_Name: Add Remove Setting Item
+  m_Name: NumberSpinnerWidget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -921,3 +922,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1302081620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070007083146346468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1e4b470a214079ac0d32b6e8078c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentValue: 0
+  leftButton: {fileID: 5070007082081734197}
+  rightButton: {fileID: 5070007081172402053}
+  valueText: {fileID: 5070007081126217867}
+  minValue: 10
+  step: 1
+  maxValue: 20
