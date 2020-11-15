@@ -17,7 +17,7 @@ public class UIScreenManager : MonoBehaviour
 
     private Stack<GameObject> openedScreens;
 
-    private void Start()
+    protected virtual void Start()
     {
         if (!setFirstScreen && allScreens.Count > 0)
         {
