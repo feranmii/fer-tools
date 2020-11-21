@@ -9,7 +9,6 @@ public class GameManager : Singleton<GameManager>
    
    public void Pause()
    {
-      print("Pause");
       var tse = new TimeScaleEvent(0, 0 , false, 0, true);
       tse.FireEvent();
       
@@ -19,7 +18,6 @@ public class GameManager : Singleton<GameManager>
    {
       var tse = new TimeScaleEvent(1, 0 , false, 0, true);
       tse.FireEvent();
-      print("Resume");
 
    }
    
@@ -27,8 +25,6 @@ public class GameManager : Singleton<GameManager>
    {
       var tse = new TimeScaleEvent(1, 0 , false, 0, true);
       tse.FireEvent();
-      print("Restart");
-
       LoadingScene.LoadScene(SceneManager.GetActiveScene().name);
    }
 
@@ -37,8 +33,6 @@ public class GameManager : Singleton<GameManager>
    {
       var tse = new TimeScaleEvent(1, 0 , false, 0, true);
       tse.FireEvent();
-      print("Quit To MEnu");
-
       LoadingScene.LoadScene(SceneNames.MENU);
    }
    

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Fertools.Utils;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Fertools.Inventory
@@ -9,6 +10,7 @@ namespace Fertools.Inventory
     [CreateAssetMenu(menuName = "Inventory/Data Container")]
     public class ItemsDataContainer : ScriptableObject
     {
+        [ReorderableList]
         public List<Item> items;
 
         private void OnValidate()
